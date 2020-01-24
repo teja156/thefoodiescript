@@ -1,0 +1,2408 @@
+
+<!DOCTYPE html>
+<html  lang="en"  prefix="og: http://ogp.me/ns#" >
+<head>
+    <meta charset="utf-8" />
+    <meta content="origin" name="referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"700b8cfba9",applicationID:"147205669"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+
+    <link rel="preconnect" href="//b.zmtcdn.com" />
+    
+    <link rel="alternate" hreflang="en" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="tr" href="https://www.zomato.com/tr/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="hi" href="https://www.zomato.com/hi/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="es" href="https://www.zomato.com/es/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="pt" href="https://www.zomato.com/pt/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="id" href="https://www.zomato.com/id/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="cs" href="https://www.zomato.com/cs/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="sk" href="https://www.zomato.com/sk/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="pl" href="https://www.zomato.com/pl/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="it" href="https://www.zomato.com/it/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="vi" href="https://www.zomato.com/vi/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="bn" href="https://www.zomato.com/bn/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="te" href="https://www.zomato.com/te/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="ta" href="https://www.zomato.com/ta/guntur/order-food-online?delivery_subzone=18188" />
+    <link rel="alternate" hreflang="kn" href="https://www.zomato.com/kn/guntur/order-food-online?delivery_subzone=18188" />
+
+    <title>Order food online in AT Agraharam, Guntur, Andhra Pradesh, food delivery in AT Agraharam, Guntur, Andhra Pradesh - Zomato</title>
+    <meta name="description" content="Order food online - Restaurants in AT Agraharam, Guntur, Andhra Pradesh with online ordering. Restaurants with online food delivery in AT Agraharam, Guntur, Andhra Pradesh on Zomato" />
+            <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, initial-scale=1">
+    
+        
+        <meta name="robots" content="NOODP,NOYDIR" />
+    
+    
+        <link rel="icon" type="image/png" href="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png" />
+    <link rel="apple-touch-icon-precomposed" href="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png" />
+
+        
+
+        <meta name='yandex-verification' content='4e4b1f7d1bc34e52' />
+    <meta name="p:domain_verify" content="ff64c9ade03e7fb418904bb99079a071"/>
+
+                    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@zomato">
+        <meta name="twitter:image:src" content="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png">
+        <meta name="twitter:description" content="Zomato is the best way to discover great places to eat in your city. Our easy-to-use app shows you all the restaurants and nightlife options in your city, along with menus, photos, and reviews. Share your food journey with the world, Checkin at Restaurants, Bars & Cafes and follow other foodies for personalized recommendations.">
+
+
+    
+    <meta name="twitter:app:name:iphone" content="Zomato"/>
+    <meta name="twitter:app:id:iphone" content="434613896" />
+    <meta name="twitter:app:name:ipad" content="Zomato" />
+    <meta name="twitter:app:id:ipad" content="434613896" />
+    <meta name="twitter:app:id:googleplay" content="com.application.zomato" />
+    <meta name="twitter:app:name:googleplay" content="Zomato" />
+    <meta name="twitter:app:country" content="in">
+        <meta property="fb:app_id" content="288523881080"/>
+            <meta property="og:title" content="Order food online in AT Agraharam, Guntur, Andhra Pradesh, food delivery in AT Agraharam, Guntur, Andhra Pradesh - Zomato"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188"/>
+        <meta property="og:site_name" content="Zomato"/>
+        <meta property="og:description" content="Order food online - Restaurants in AT Agraharam, Guntur, Andhra Pradesh with online ordering. Restaurants with online food delivery in AT Agraharam, Guntur, Andhra Pradesh on Zomato"/>
+        <meta property="og:image" content="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png"/>
+    
+
+    <script>
+    window.dataLayer = [{}];
+    var stdeviceProperties = {"user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10.14; rv:71.0) Gecko\/20100101 Firefox\/71.0","user_device_acronym":"d"};
+    window.dataLayer.push(stdeviceProperties);
+</script>
+
+<!-- Google Tag Manager -->
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MKPZQ6');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-799606957"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-713588712"></script>
+<!-- End Google Tag Manager -->
+
+
+    <script type="text/javascript">
+        var zomato=zomato||{};zomato.FontLoader={logLoaded:function(o){},isSupported:function(){return"function"==typeof FontFace&&"object"==typeof document.fonts&&"object"==typeof document.fonts.ready},triggerLoad:function(){var o=new FontFace("Source Sans Pro","local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff2')",{style:"normal",unicodeRange:"U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000",weight:"400"});document.fonts.add(o),o.loaded.then(this.logLoaded),o.load();var t=new FontFace("Source Sans Pro","local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGJkF8H8ye47wsfpWywda8og.woff2) format('woff2')",{style:"normal",unicodeRange:"U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000",weight:"700"});document.fonts.add(t),t.loaded.then(this.logLoaded),t.load();var e=new FontFace("zombatsregular",'url(https://b.zmtcdn.com/stylesheets/fonts/zombatsregular-webfont-web-45g75h96d756.woff2) format("woff2"), url(https://b.zmtcdn.com/stylesheets/fonts/zombatsregular-webfont-web-45g75h96d756.woff) format("woff")');document.fonts.add(e),e.loaded.then(this.logLoaded),e.load(),document.fonts.ready.then(function(){})}},zomato.FontLoader.isSupported()&&zomato.FontLoader.triggerLoad();    </script>
+
+        <link rel="stylesheet" type="text/css" href="https://static.zmtcdn.com/gencss/v3/t-fce05e705b469d889fdc20033ca4cdb8/l-H4sIAAAAAAAAA0tKLE7Vz0nVTS_KTNFLLi7WqcrPTUosKYawi0sSSzKTwezi1NzEPCBHH8YAiQIAP2LJTT4AAAA/h-eac35e78f74e85cdc2a2d80782c767ab/fh-e1cdb8fc80ae0966bcf70574f46cd932"  />
+<link rel="stylesheet" type="text/css" href="https://static.zmtcdn.com/gencss/v3/t-a2d5e9d5c0dd810668d882efc1bebc7e/l-H4sIAAAAAAAAA8tJTUzLSS3RSy4u1knOyC9OzQMzswpLU4sqdUszdQ31DA30TPSSS4tL8nNBcgBkuRwkMgAAAA/h-eac35e78f74e85cdc2a2d80782c767ab/fh-e1cdb8fc80ae0966bcf70574f46cd932" />
+    
+    <script type="text/javascript"></script>        <script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+            // t3 => web/restaurants
+            // t7 => aggregate
+            // t4 => country
+            // t5 => international
+            // t6 => iframe
+            // t2 => business + nye
+
+            
+ga('create', {
+  trackingId: 'UA-19617341-21',
+  cookieDomain: 'auto',
+  name: 'global'
+});
+  ga('create', {
+    trackingId: 'UA-19617341-30',
+    cookieDomain: 'auto',
+    name: 'country'
+  });
+  ga('global.set', 'dimension1', 'true');
+  ga('global.set', 'dimension2', 'India');
+  ga('global.set', 'dimension3', 'Guntur');
+  ga('global.set', 'dimension4', 'Search');
+  ga('global.send', 'pageview');
+        ga('country.send', 'pageview');
+  
+        </script>
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+            <script src="//www.google-analytics.com/cx/api.js"></script>
+                    <script>
+                function utmx_section(){}function utmx(){}(function(){var
+                k='64651952-4',d=document,l=d.location,c=d.cookie;
+                if(l.search.indexOf('utm_expid='+k)>0)return;
+                function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+                indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+                length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+                '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+                '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+                '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+                valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+                '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+            </script>
+                <script>
+            window.google_experiments = {};
+            window.google_experiments.ID = 'FQnzc5UZQdSMS6ggKyLrqQ';
+            cv = cxApi.getChosenVariation(window.google_experiments.ID);
+            cxApi.setChosenVariation(cv, window.google_experiments.ID);
+        </script>
+        <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1466145233705476');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1466145233705476&ev=PageView&noscript=1"/></noscript>
+    <!-- End Facebook Pixel Code -->
+
+       <script type="text/javascript">
+        window.___gcfg = {
+            isSignedOut: true,
+            parsetags: 'explicit',
+            lang: 'en'
+        };
+
+        CITY_REDIRECT = 0;COLLECTION_CITY_REDIRECT = 0;
+        var zomato = zomato || {};
+        HOST = "https://www.zomato.com/";
+        ACCOUNTS_DOMAIN = "accounts.zomato.com";
+        VIDEO_UPLOAD_HOST = "https://upload.zomato.com:443";
+        CDN = "https://b.zmtcdn.com/";
+        JS_CDN_PATH = "https://static.zmtcdn.com/genjs/v3/t-a892d68e38b2466054bd018859e3d635/cl-en/fh-48f8c473ef437e2ba93612771787bfcb:e1cdb8fc80ae0966bcf70574f46cd932/";
+        CITY_ID = "11339";
+        is_uid_valid = true; // For new jumbo_v1.js script
+        USER_ID = "55314605";
+        COOKIE_DOMAIN = "zomato.com";
+        CITY_URL = "guntur/";
+        LANG = "en";
+        IS_ZOMATO_USER = "";
+
+        window.howdy = {
+            'm': "zomato"
+        }
+
+        window.fbst = {
+            APP_ID: '288523881080',
+            SOURCE_FB: false,
+            SOURCE_FB_CODE: false,
+            IS_FB_CONNECTED: false,
+            CONNECTED_FB_ID: '0'        }
+
+        window.gplus = {
+            CLIENT_ID: '442739719837.apps.googleusercontent.com',
+            PROMPT_TYPE: 'auto',
+            IS_GPLUS_CONNECTED: true,
+        }
+
+        zomato.documentReady = zomato.documentReady || function() {};
+        zomato.UnitSystem = "METRIC";
+        zomato.distanceUnit = "km";
+        zomato.csrft = "7557ef1cb1918cee08e1073e10696704";
+        zomato.csrft_creation_time = Date.now();
+        var FLOADING_IMG_SRC = 'https://b.zmtcdn.com/images/floading.gif';
+
+        var IS_BOT = '0';
+
+    </script>
+    <script src="https://static.zmtcdn.com/genjs/v3/t-f0c0193d57a01b25bb3b34b3d01782c2/l-H4sIAAAAAAAAAytOLS7OzM_Ty83M08sqBgCsMcoLDgAAAA/cl-en/h-7ecd5179a5939bb935e8be67a95bc9d0/fh-48f8c473ef437e2ba93612771787bfcb" async defer></script>
+    <script>window.DSZ_SEARCH_ADDITIONAL_PARAMS = {"city_id":"11339"};</script> <script type="text/javascript">extra_map_data = {};extra_map_data.sq = "5MlUaXeddtEGG92bf0gqMhhVF2tETuiQ3zSbVAlVBsAldzf\/kCwu+N2WrH3VTzxAx2fO5OFJR791prA+Z5\/vaPRklXrEUm4fbzsM7Uv6K2tQdSe6fQcQ83LPS+ZRGQ8SplpbhTdbfFfgWsQ32r6ioi2\/QU70hDv+mcu2uKD0t9w++tJLOu+vsxFwRW+hwRo3MNlApEobYIlJ5EfGuopwcoWXrW4eN3g0w3ursK8aSJxREyGk0d71tUWO65P3bjlWhBS6EXFnEz7kR0xuQqDj4NzFAKpO0i1ANY9mdyLqALHevxRZU6x\/tCoyoWEJMpTOvBPUtoiAViolopfToqpAONZxTKFaZC0dmnzk3AnTNCgINVYIPaqP84DJ2+S7kFHMBr+4bq5VnXBK4IA47Qrv2oE4oYLfebVXc17\/n9rOBTQ5mZDGXuUkFHpccPNDEzTfphxGuaZnNygUJdEHDM7TqJ9kv2dcxTd9biTjfrnlsgLT5mKR0GJQKLBBeNIC11fA8BQ67w4UDVA4guJzAfuRTFpXvfUyWcmEC9wJpadBE4N3\/yEBN7r27K62KkoPVXXJngBhOPKpUncW8sQ9qj99VyD3e5x5dbnftIMkBwZ6skoJZAXFVDqEBe8nb7IhmazijIeIPsDYSsgZv8AbKMQ3\/dbTaZpPLMDVoC8eFb9fu97KLP3pX83vDzTmKFiJyypNasfN0GgbsVOtSW0oqRes0sZWs66O\/eU5Dptb8VORgvlMfDcAfsBWJFrHyzw\/C8F\/hp2kQ4OkUs7eWhFHKaozSOJ9srgPXj7BOGdx7rg2VXkqyrZ6IRZJk\/BYOvpC4E3krt9Ni5IR2onEOf95a2nBrvR+51plVudn92RcF8cj5MzDnoRpMYfvojf49Cl0j28ZPqYpNhx6b61+5b8FBClJTJ6C0jA+NFYL7euoPSzC2wzZLdk351ZSSVthDPXOrpoMOGzv\/kkMqrrdPq+kBRZEysJ05hjG\/T\/ZooEdNIW95ohQjp1Rq9B\/7MxOLuZdlbb\/+qWkoD2QW489ZpEBLpVjCx6kYQzGDFRRm5EoFgDmS4ldqK094Kaevlrvm+RJCDoDm4hIpmuGvEQgVhBBceIu4FqCNgXqi2kPmMFxtB+ygCR5oFWjbweOZhOxds+RCbqDIRJYlHwqEfIcdA4O9IyFBW6KAjbbDhrJtCxpxisjLJC+zgxL\/aY8qeJ+af0SoSHFi14hEPmx3WLa0mp\/io1Knv7Od9hKIZO0kTIIVbcTPwm\/Y46z71LZeltp2lUv9Ht853EnjfdsTu0LJFq0HbU7PBDrmp1gs3QVic4YUTe4xHd8i9ddj9X19iWyPyu9lnx6YP+n3GIezQcyu\/U\/ET5Itj5ZSCrKavjP\/QXlMbgcRPVdrKiDV1L4Fco9Q0UqrG\/Nulc14i\/55wD2hBQqVrL4q4KkGorJGAh9g4JwUAdwstcY4YvA1aiq+AQLMJ45duSIZhIr\/1VQqPwtNgweM9IkSGKeiXVQH0ZQd033WOs1rQCCVcajUTrnjxOrD8gmuqpHiW9bDa7eloV4Z81H2XwIM6jiURSfpdyJd6\/kCzwrrBn4JNDgATqjVSQ6FR\/\/rnFPjrK9W2H2R4QuCbBZyw1YEfmspgNIyos3PlDGPJH5ovJvaAJkx\/L1XZCJss3iZajqxH4amcS0xqinBojDfJp2P6+cxzfe7gFrkwMDykzKSsuwv0EX8+SkpOA6FJwz1GgN4w00t2hXsGbrinQ0Ge\/cXvyoU2LziF\/6MaWxwJ+pT1cQjfzeJ6Oqy+1WQebDHKQsXdgwQoQr9X9MMy2Iz0qX6idef9IuYV10Q7xJj7cAU0Cu7kQOWfs\/Ceebm+FqMa05oGgvjXo7hzzHpT5AjcPtHkWtCOHWgt824Xgx+OG\/pKcVnMYEFtcIpYgVA03RegugaezkWLP4cjjXx8lhxtkB3hK0jqdQAOqxKoReuRG05F8HwQS55Etow2n7qpB42Xy0HsZrfP7OxSzi84rlwDfUP0xELPuCtNJ16neVkdGGDXwlTLveKLLelSr9yX3RoRN1Se7xPlmpPqNByvWBfeQ4KQkqtAQuBIXY1eRJ2jO6yqibobYj5h3rqTKco0s8NnEhvhcZKKp7ik8q\/RrtbGZh12ktKZ+FRUrlvv40ZqBcT2yAdMrbjow5mDIBYey60d4MMzBuiOJe224IXQcaoc5c5qPc900gXUSgibR91QWpaOj9ijCCJfbkgH4VYGxMfLRMPHBQ41VM3CQW87UmLdNmeEG\/fogYOhIu2qEfJMvVWoXFRhzJtpJRNmA+AAladq\/DRq7rrsf10sZ8mGzuCJTJIj1pim4lPG7qdiyVsfR6p2ErzffxwWlcek2eEDaUq\/qNww5Uax8cTxqkJ2cPTjEO3Ok33br10bJYPJnOz3rjpSqT3XGs7baXwiMPQ8RaHmr7sWgM0gFK199X4ZntFjPKQgrJz6kulytXV0hRrA0oiR1RIptMrrobykgQb9MUk7ah5K5iCm5uXxc6rB1sXnKq3kPhaSm0e3QmZ4lQ0gZYYXYCZ7xc\/QUBLN0zMByOyVBSVs1oEuKbT2\/5xzbCCmK1IEZUh\/5Vyt1BydMMQxvx7+HDWn2sSe70T8zXXKHtrB\/n5MfQWGn017DXjIsDRYiHrSQDkEZv5AdxWkBo1n0XnAijqz76XVPMLHzfOmQJrpO3HlkZwyHqMx4\/Hw4BE3XeIYkwGugOZpYDq99dB96qB2CVR1VYuSuQqrKu+uCvttSt+vTX+fEzZDp099Cgd3Q0KUu\/BTGHzo9qGG8hvg2NptCQBFdvicjjFfGCrsJbbKWXo54bstwRZDqFoJVVewTyDVYWyPUfRrjfCTXraKyHYdBgn+QHMMT0Zwa05jjDazBhtExddJQywIJp71ZvnmFInWxS\/HtPfMJXlUXN+nu1IynAiwSLskBZ\/BZg8mnfQRkECql96KOMNmvU5PQ6UJVjdLeGMlmyK5eNjYtDVEyquzZtiEIk3DoMkwKmrw4v8aPOQ\/ZUSyWFhzEfA9K+bzjScVGsG50aoYxma05EXdKCsSML+geZRJdrSu1LZF5oV4Cc\/+r4b+SxDMIeX1WJS\/dwmitoqTY96x46SHsmhYbDwTXfvyRTtBF72SdfJp5ZsuHHuhiv0XpZmxVxQgZ6eExLoXrl6BM8SPf0OBfE\/Fj7J7r+t37egnhzB3NQNg47C0H2fR41e50VXS6q3s6UlgojRmGkbrc+6jQ4\/s3sdHeQ8AglWM2eIbIfu\/VIJ4cv8f6ZJ5Oy3ScZBaqUTBQu+SH8KW3NL+lajHHZXgyxMQvPPKyAyW9ndT+ldJikDvfqFRkUJMjds6EKUlYoIl5mOjwtoEVoz0OGLtPuvoeY6MD+GqV5uOLmG+EFiePJGievXkei7CpZelU8qBIHE0PorbYJr3dJLMEECd7HiLrrBujGUI+V2DZVqB91yLu1YRX6R3h54VoG8qr1bOi3rRSKU9IJTewJu2YLjvRQkZBt8CWDqVPFv\/zNzA+i+7z+DrVdfNTgY1jzFrISOgAUUTBoyJaG5PS0H3nwC+lzwKJjWU9EVMq4b92LDSYB1UrX9D6fyrKNdW7eIRjpHy8+NUQoRgOH2cTm0C\/AUcINaQlnDg4qo3obhqW6bMKYtj\/Biz+W3G1L1N1nlmGUj5KirfBor9tmXkISn6pgMgKnnSIQrsQHbKCCd7gaVBLzAXSLwEk0rXOXNB\/RGnBeGf++662E9OIMEUv0ieMlp98YULxM8QQHzfPi\/og1Q9l87DmC9arDRyK3B27nI5fn4uNXjUv8uregToLjxnT7l6GPRa0dzN1QieVeyThT4g+9JK8mnwDwU8kDmEazNBy9TBJk6rxG4qGzHxRlyLEHE\/y\/0TuDRdHgzUk4qEs6NXraDmXBcYDo63IZ3gfEyG5AfCIGlm2IQuXyUZDAEQs1YBY1vP5WL\/GA1iYhjFWf5\/XbmqnFifB4Q4ZoPSedJTd4Lb54vzcFRmDgzaKV5zpnDTPhtqyqAB5QqGmOd9+DwIt0TCVBO0ZXxXD4b9yeLXVMnIVE+AwQX49Coua1dinx6ws+LX3ynxxsGAgGNFgx2hyrgFHYKvJXwUxoK77ZCS0+MA7KpH6EOVfzJwiMKBuzxrzq2RJn0f1onkdtq3N\/eRAdA4JOpnm9SfuXnWDgUUUdUin+1RBvpWPIudJngrDXDrRlxx3FVpv3TxSa1p\/kuYlFIJ0oz+PIgZbRTrAxRfJ9TJo5Jwl5U3FKhYrSc7O6se5U0ezZ7GwcrKzG+Tmgzk6HU5ASulXvwUpkDOpppH2yWKQR+b5A3BCTtvo47pHH7CD+4vQZJQROZJPWTLHPFker1p8VSEZerdZw09m419SUARvzYfv2vFSJdycrEk+ei2wChsSeHgLqCFzExGk5z3iUmHccjg5cmgoX2vubM\/dje72mITvpwzOrX9ZDBuTrhW0gfACrUKVRau9ObZYvFTGXghYkIa97zlbcNUqBEtWXrqD9G7O1nlDRSd4hl+tA7g+BhZS6TduxKRh7LOp4XRHIaGiDvqIC3WU+tU3gqLW2PBXYepJH4t4RVmm24Wm+QykzTxJBVLkiZMwVOj3a5KjGuegwzzSvDLlrcf2smOIasDfbkj4Z6pBHYTH5bH9VSAnvMKjDWDdjTDc1KhdLsJJE344pNO3q5dZrSNv\/2oK+s5y6RW5koah0HYVrLkhHWf\/5Vy3tJJ\/5HVqyE6Vzc1YFqLLF8F5r0\/qMqGEHJstKfpRYeqdM1buEAWBKJZNpQOL\/eUIyZWq3k9BqdgHg3qk5roKa9AzYg7YpKhm8RZUyvkZctb\/NIWGdmVpd+eRCKrvJdD0FbnjDuinRTqLVN51LzYKclvfNj385lDouDI01c39Np4vojg0BSBq4i4tefXUhYwVJFfJg42HjPA+GU0gWV69wn68muwFFrllmsoVloYrSUTOnNgQgHMbkQNPzXTvp8Mjy1qMMQC1Ky77TeG6E0V1vouGpZ65RnLvxq6Zgl5aVOlXYneZZonzKJf8nrHchVc+Afhiitw5UCL9+7OeIFhhvMnWOswQD5f8HaVtQmATr04EWTM9Y0WLmuGFmnPlDsPpxoamNR+b\/GfsIp2EObpPlexR2QlZH+4nBU9TPdzs9TBqggq2jqA0EpSqWrzaRv4dD6UaXcCpqEi5k4wTNpbEY474\/+El4h7Ridt4g0490ZJrcsInrBst42Ha2YU8fof7YFKPwo6lDRtlBDi\/TdBTMRKD14s7ZUo7n43FPewoA3lyTYzd8uYbjbw\/rKcM8qe1DKZbpmjb+RINu+HnjgbsAE0Xs6TfW74ZLmYt28x2ojpI6dPqUhkp0kgeHUlDGhS4hy7Mr6GCLOYOEBzX2km4xkqyF+aBxoy4433vhy6WcT\/xAqrp3vnknKSKuOVLg\/KBFobsTKWcOQ9waOBs0El2ftAeNCP4DdIAxxGywy8Zpt1+IAzlX+bKeAezO5eWeN097bkrQlxY58916HlkjYdV\/I2wmnGn49Zo5QuXo6yMIIi5GRAC\/6\/DKIQVk6Oyhju4l6lbWZkd\/7sPxCmr4DohjQdRza0gl0w6v\/Wga6GfZAULH92r61JgDZOU91pIL36DGdjR6IIAWMIPGoRFMrX528Q6iMw\/ANceUt8bVzNA53ChBPeqmKkOuXFXi4\/BAHerijpKjfgc7HYB1A3DyS7LGLq6OlACyZ1ikJNv5cUlvYvDn444D3yEB9wAgFT8EKCS8afxYbR6GgdTnqkc5KfzQJC0XtAdPh7QdI436ZF39lehz6miE4jDU84kcyNbUVv791Npn6C3j6TE+z4eUOaLCnED\/Lyy7zOD91jKZ55+WNgTw80d3wPIzLsSlcPL32hASfCfVf1l10RxwbxwVyIrpGMzVhfE3LUKWBxMQcXQRwC4DWvcqEEKkeYnUw7IknzpgPsUqVOei34x9EYiHGO\/n35xqdPvIyTZ5LOd2XmuC+33Ve5OFywJa\/BKf+N\/qj3L0wNJnQnGBthhwn+FFC7gof+oQJZ8cN0uXwrwaxRmrr4KQQa9rkn1JZxdSa669aF+xNZ8dLXt6EjBohFZ4xGB43e9zgRqLMFlS6\/wiKB8bpo03Za4+RMspgLO8cvejYP+CyetvOuE+NH6vAulas0UDKDqUW77nfvW\/WDWRFtAM0\/ODd0LATklosCarp7RYHJORJSB1WVo3FEPhEbQxy6e9lh4k2WQB\/hcCWPSH3uPfqgHI5JZ8h+YqAVQ8ydk9KWm69w27DIADFyUCNcgRzU1RQP3068bsdyn8qDHZm1Bky4dFmR+FxHknIxkCSmJ+2TJOsSj26k9CHdSy+UZ43uffXSDzf4FoRHoXl1XM4IM7nhe0ktlmyGb62K8JySGGTNwQo7O5NsSr8a0cXBnlJ6ysG18Qrnl3hJep8hTocCDztJYY29El7YBQ9v01SoGJI1mc3upxtW+nNEK2H2DkepNf0RcUri+f14dH3XhD0AOp38zn0dWbzNQ\/LlCX1DC63xI1t3kJULG9DZ39SgB31AMjp388qmaickPDN9+JUxgPUOtO9dyYeqw8sR+8WglSqDp9+8uUAv23k19YR1Z+xQbpUl6gICCn5zC48C2XAj\/wLz142FMLYnM0rb+J22zoL189TRqAN7Qv1GdqJiQsvUZTNToyRRWzpyi0fwVCGHYdqnZPzawts3GBgatQt\/BUvte5tyLV88EhsYPTBMfDMTLFxcQKFfkwlkIILSmn8g60HLBqLVoVDVEsOT6BvujNzJoCSP+F7dds5EP3deQCSVpWrANDjE+Bp0J2AjG+Vgm\/oFffrYG7SnB72+j0DvIfsZT3m59aQl4BRxrluzVyPPWuFgwc\/5pO6vwnISDEELYeAkee6\/MmJ5MO+o06wkfB22qfWM6Gc4L\/xxCNAAPmzg\/3C5xpzh0ggKrdLnVN2Um+fMPZqFvJk3oz5UtQ\/D\/k6lg97ClpP6dwjuvPosWuKUiY1MverApmTHyDqUI1275fkT\/I8ZaeQzjI\/ugDjj5iA7eBy+hta6Gmbbc+OuW2DAoJlfp\/eiYzm53xFmdSReGEF9AUHqo\/YCIEFpgochx1PhmNdeDBmUWyGesywPbB1DyGtIbT+apHrQNOA054FJSMl48lzLEa\/NxvImuuUDbGzyBhBHYBm29Xovypave6mRDM2safaiNxUyVtcGdOuDnMsc7dOnXw391JkwGays1LotvKXypn\/AF57QscBtcFSGtLjouc\/lJnYnrTf1OgTynL072pGadhuvej3S3q4vRfbsfAmjjKPLJ12JWv+ERmYevWFnwjjkDfxlZi7jk22MDCnysKu9vlobdlY4iT8tLDRa5UbYJrKHrHfIkvqXy0Qo0vT6IIkrWxAqIoKa1726AWOxJLmD\/kMSDTsqWDlKpmku6CegN2OGWZ6xFgUxQGe+1KIvp7JxKjfhKvkfEwG\/KuHCuf2WmaHakONV9WQn+CIYvYnmYentTLQM7CPfpiWNR\/IwAaxxtbL0BE9oeFbuEZS7T8ZhIbuMOFO30\/5Qr8O9uWOqijzbhYwrcPTCIsnq0XSSnfSwJVnX4r\/ywnsaEtjSnGsjReuihzWqZvL93SyB0W+AB9\/kvXWgyqUvY1L7Th8ooH2mz84ZQvHZPvXlRWitSg1HgNiW9drIR0MyhV51n19+F17eeF1QPeN0wWqJK4s9DvCEV11uxER4X3b73vYd65Zf13IMi6LAgh6Jabgnkz91nnfQQQfa3saNvwK0C5RZrGaauVqis+DiEANYBeZBgmZXgp2Fg0D4M94z08cshX98wPN7JD9Wb7SePVXhoMHGhOHQmn9Cz4adatdAApMztjuMVB\/eyjKlYQHTeP35477MtfcJHqOicqrAZ8OHFL7DjQVyqacbv5hSi+DxlbhdExW+sukboMcU21P127lDLAqD2ldu6MRKK7lkDfSVKhVIZ\/fqjioxkiJOkj5aBhJ17vg+xyeEOJcFVE6DMaE4cowPEM875vSohbOKFexQ0wTRQT7j3AiCDYA6Q0HARsARlNZyQ7Ww==::ba457dc54475aef5e0a39c2efb03d353";</script>
+<script>
+    window.USER_ADDRESS = [{"id":52997533,"user_id":55314605,"address":"D.No 26-33-13, 2nd Floor Lakshmi Nilayam, 7th lane, AT Agraharam","alias":"Home","subzone_id":0,"subzone_name":"","delivery_subzone_id":18188,"delivery_subzone_name":"AT Agraharam, Guntur, Andhra Pradesh","pincode":"","last_updated":"2018-11-04 11:38:25","status":1,"address_instructions":"Lane opposite to water tanks.","google_places_id":0,"latitude":"16.30945212615143","longitude":"80.40875658783568","cell_id":"4200298804756348928","source":"web","most_recent_date":"2018-11-05 12:32:14","city_url":"https:\/\/www.zomato.com\/guntur\/","place":{"o2_serviceablity":null,"id":0,"place_id":"18188","place_type":"DSZ","place_name":"AT Agraharam, Guntur, Andhra Pradesh","place_name_main":"AT Agraharam, Guntur, Andhra Pradesh","place_name_secondary":"","place_details":null,"latitude":16.2976746,"longitude":80.4201336,"cell_id":"0","delivery_subzone_id":0,"fetch_from_google":true,"location_type":null}},{"id":19638000,"user_id":55314605,"address":"Flat 505 Block 1 Rajapushpa Properties, Silicon Ridge Appartments - 500030","alias":"Home","subzone_id":0,"subzone_name":"","delivery_subzone_id":8329,"delivery_subzone_name":"Laxmi Nagar Colony","pincode":"","last_updated":"2018-05-19 15:15:45","status":1,"address_instructions":"Besides Janapriya Constructions","google_places_id":0,"latitude":"17.37012029999998","longitude":"78.42196360000003","cell_id":"4308702744220270592","source":"web","most_recent_date":"2018-05-27 17:49:27","city_url":"https:\/\/www.zomato.com\/hyderabad\/","place":{"o2_serviceablity":null,"id":0,"place_id":"8329","place_type":"DSZ","place_name":"Laxmi Nagar Colony, Attapur","place_name_main":"Laxmi Nagar Colony, Attapur","place_name_secondary":"","place_details":null,"latitude":17.370028,"longitude":78.422819,"cell_id":"0","delivery_subzone_id":0,"fetch_from_google":true,"location_type":null}}];
+</script>
+<link rel="next" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&page=2"><meta property="og:image" content="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png"/><script>
+    var CITY_ID =  "11339";
+    var userActionType = "pageview_search";
+</script><script> window.adsData = {
+    'location_id': '18188',
+    'location_type': 'delivery_subzone',
+    'display_page': 'search',
+    'search_results': '{"ads":[],"results":["18796083","19007271","18900916","18741306","18737864","19086883","18965710","19129491","18900537","18740967","18740243","18741392","18737912","18737849","19079086","18798707","18739259","19180936","18978475"]}',
+    'ad_format_type': 0,
+    'search_intent_type': '',
+    'table_booking': ''
+}; </script>
+            <script type="text/javascript">
+
+            /**
+             * This function is only used for the revamped restaurant page.
+             * Used to filter out newly received scripts to require only those scripts which are not loaded yet.
+             * @param  {array} latest_scripts Latest received scripts.
+             * @param  {array} old_scripts    Already loaded scripts.
+             * @return {array}                Return array of filtered script to run.
+             */
+            function filter(latest_scripts, old_scripts) {
+                return latest_scripts.filter(function(script) {
+                    return old_scripts.indexOf(script) < 0;
+                });
+            };
+
+            /**
+             * This function is only used for the revamped restaurant page.
+             * Load javascripts for any restaurant which is clicked on the side tab of the new restaurant page.
+             */
+            function loadContextualJs() {
+                // Current js scripts
+                var jscripts = ["https:\/\/static.zmtcdn.com\/genjs\/v3\/t-11f07ff7a3245a0ef2b803da1ffbf70f\/l-H4sIAAAAAAAAA32SS3bDMAhFN9Qmi2lHnehgi8gkWLgSSmqvvvIvxRl0Ji6Cx09pyOOpp3i65rdJelA5McRQIOCMWul7iWeFECgG8ynhnfCRDckdpCWmF18Y87lDHjDNxBOwBOur5qq5CbQiN8J8DAe_hu_kWvpGLACfXRAJvOhevwum8TR9SFv1ZjJwqTI1cPUwTCMLeKMLEXhUavOhFmZslSRaineMegA_msDYF2ixqW0Y9NfCBpa2XaYQy2Dw0ImKzT2wjBditixhfi9KL-y5hb0KRO-gVn8nHQ3PCKntLHhO6QBcRH1Ium3b3vcvrkHnkVHRjk8fpHrosOSjWQs-9P8ykAbam6vvAZQatie3X2H1Rq2zNq6vz1TDbJ5_1lISuw6i5_U_U5Mg1VM71yPCFGna0iwiJvFEkWbRXyACQfMiAwAA\/cl-en\/h-7ecd5179a5939bb935e8be67a95bc9d0\/fh-48f8c473ef437e2ba93612771787bfcb","https:\/\/static.zmtcdn.com\/genjs\/v3\/t-8ce84462899c0a62ca422eb68cb1c8a7\/l-H4sIAAAAAAAAA0WMUQrCQAwFL-QG28P4K0t4kkja1GQX0dPbxYp_M7zHsHhipfujI1606I55-lrpWiaazjQX7tl8-c2GejO0gYkaLIM28eYXxRMx1OerwDZE_oOUHG7GUnM_HbG3rjpSH1tWOWeJAAAA\/cl-en\/h-7ecd5179a5939bb935e8be67a95bc9d0\/fh-48f8c473ef437e2ba93612771787bfcb",2];
+                var alreadyLoaded = window.alreadyLoaded || [];
+                var scriptsToLoad = jscripts;
+
+                // Update already loaded scripts
+                window.alreadyLoaded = jscripts || [];
+                if (require !== undefined && alreadyLoaded.length > 0) {
+                    scriptsToLoad = filter(jscripts, alreadyLoaded); // filter out the scripts which are already loaded.
+                }
+                zomato._totalScripts = jscripts[jscripts.length - 1];
+                require(scriptsToLoad);
+            }
+        </script>
+        <!--[if IE 8]>
+    <script type="text/javascript" src="https://b.zmtcdn.com/application/javascript/respond.min.js"></script>
+    <script type="text/javascript" src="https://b.zmtcdn.com/application/javascript/pie.js"></script>
+    <![endif]-->
+
+    <!-- Google One Tap Login Library -->
+    <script type="text/javascript" async defer src="https://smartlock.google.com/client"></script>
+    <script>window.onGoogleYoloLoad = function(googleyolo){window.googleyolo = googleyolo;}</script>
+    <script src="https://browser.sentry-cdn.com/5.3.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        Sentry.init({ dsn: 'https://37075f740e4344f59ca5578e885c704f@sentry.zomans.com/20' });
+        Sentry.configureScope((scope) => {
+            scope.setUser({"id": window.USER_ID});
+        });
+    </script>
+</head>
+    <body class=" en is-responsive " 
+> 
+    
+    
+    <div class="ghboxcontainer"  style="visibility: hidden; display: none;"><div id="ghbox"></div></div>
+
+        <div class="claims-app-container" id="claims-app-container"></div>
+
+    
+        
+<div id="sticky_header" class="ui sticky v2" >
+    <header class="header  breadcrumb-present  navbar" id="header">
+                                    <div class="header__container">
+                <div class="header__wrapper clearfix">
+                                                                <a class="logo__container left" href="https://www.zomato.com/" title="Restaurants in India, United Kingdom, UAE, South Africa, Philippines, New Zealand, Qatar &amp; Sri Lanka. Delhi Restaurants, Mumbai Restaurants, Gurgaon Restaurants, London Restaurants, Dubai Restaurants, Bangalore Restaurants, Pune, Abu Dhabi, Colombo, Hyderabad, Kolkata, Chennai, Sharjah, Manila, Auckland, Wellington, Cape Town, Johannesburg Restaurants">
+                            <img src="https://b.zmtcdn.com/images/zomato_white_logo_new.svg" alt="Restaurants in India, United Kingdom, UAE, South Africa, Philippines, New Zealand, Qatar &amp; Sri Lanka. Delhi Restaurants, Mumbai Restaurants, Gurgaon Restaurants, London Restaurants, Dubai Restaurants, Bangalore Restaurants, Pune, Abu Dhabi, Colombo, Hyderabad, Kolkata, Chennai, Sharjah, Manila, Auckland, Wellington, Cape Town, Johannesburg Restaurants"/>
+                        </a>
+                                                                <div class="search__container left">
+                            <div class="header__search-bar">
+                                
+
+                            </div>
+                        </div>
+                                        
+                        <div id="login-navigation" class="login__container right">
+                            
+    
+
+    
+    <div class="header-link">
+    <div class="ui button header-icon-button cursor-pointer clearfix top right pointing dropdown mr0">
+
+        <div class="floating ui red mini label hidden" id="notifications-count"></div>
+
+        <div class="ui left inline header-icon-menu header-icon-profile mr5">
+            <img class="lazy ui avatar image mr0 mini" data-original="https://b.zmtcdn.com/data/user_profile_pictures/705/6f9c09edc3db9bab64a31f525f920705.jpg?fit=around%7C100%3A100&amp;crop=100%3A100%3B%2A%2C%2A" src="https://b.zmtcdn.com/images/placeholder_200.png" alt="Teja"/>
+        </div>
+        <div class="vertical menu" style="width: 200px; right:0; left:initial; margin:8px 0 0;">
+
+            <a href="https://www.zomato.com/users/teja-swaroop-55314605" class="item">
+                Profile
+            </a>
+
+            <a href="https://www.zomato.com/notifications" class="item">
+                <span class="mr10">
+                  Notifications
+                </span>
+                <div class="ui mini label grey" id="dropdown-notifications-count">0</div>
+            </a>
+
+            
+            <a href="https://www.zomato.com/users/teja-swaroop-55314605/bookmarks" class="item">
+                Bookmarks
+            </a>
+
+            <a href="https://www.zomato.com/users/teja-swaroop-55314605/reviews" class="item">
+                Reviews
+            </a>
+
+            <a href="https://www.zomato.com/users/teja-swaroop-55314605/network" class="item">
+                Network
+            </a>
+
+            <a href="https://www.zomato.com/invite" class="item">
+                Find friends
+            </a>
+
+            <a href="https://www.zomato.com/users/teja-swaroop-55314605/edit" class="item">
+                Settings
+            </a>
+
+          
+           
+
+            
+            
+            
+            
+            
+            
+            
+                                    
+            
+            <div class="ui divider mt0 mb0"></div>
+                            <a id="logout" href="https://www.zomato.com/logout?noReturnOnLogout=FALSE&amp;ctoken=7557ef1cb1918cee08e1073e10696704" class="item">Log out</a>
+                    </div>
+
+        <span class="username right ml0">
+        Teja
+        <i class="ui caret down icon" data-icon="&#61655;"></i>
+        </span>
+
+    </div>
+</div>
+  
+
+                        </div>
+                    
+                </div>
+            </div>
+                            <div class="header__navigation__container">
+                <div class="header__navigation__wrapper clearfix">
+                    <div class="left h100">
+                        <a
+                          href="https://www.zomato.com/mobile?ref=new_header_top_nav"
+                          class="header__navigation__link get-the-app"
+                                                  >
+                            <img src="https://b.zmtcdn.com/images/icons/get-the-app-plain.svg"/>
+                            <span class="label">Get the App</span>
+                        </a>
+                    </div>
+                    <div class="right h100">
+                                                                            <a
+                              href="https://www.zomato.com/guntur/order"
+                              id="header-order-food-btn"
+                              class="header__navigation__link left"
+                                                          >
+                                <img src="https://b.zmtcdn.com/images/icons/order-online.svg"/>
+                                <span class="label">Order Food</span>
+                            </a>
+                                                                                                                                            </div>
+                </div>
+            </div>
+                    </header>
+            <div class="mini-header row">
+            <div class="wrapper">
+                <div class="row mini-header__breadcrumb">
+                    <div class="col-l-10 col-m-10">
+                        <ol itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"
+                    class="ui mini breadcrumb">
+                        <span>
+                            <a href="https://www.zomato.com" itemprop="item" class="tduh section home">
+                                <span itemprop="name" class="grey-text">Home
+                                </span>
+                            </a>
+                        </span>
+                        <meta itemprop="position" content="1" />
+                    </li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"
+                            class="ui mini breadcrumb ">
+                                <div class="left"> <i class="right angle tiny icon"></i> 
+                                </div>
+                                <span>
+                                    <a href="https://www.zomato.com/india" itemprop="item" itemtype="https://schema.org/Thing">
+                                        <span itemprop="name" class="tduh grey-text">India</span>
+                                    </a>
+                                </span>
+                                <meta itemprop="position" content="2" />
+                            </li><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"
+                            class="ui mini breadcrumb ">
+                                <div class="left"> <i class="right angle tiny icon"></i> 
+                                </div>
+                                <span>
+                                    <a href="https://www.zomato.com/guntur/restaurants" itemprop="item" itemtype="https://schema.org/Thing">
+                                        <span itemprop="name" class="tduh grey-text">Guntur</span>
+                                    </a>
+                                </span>
+                                <meta itemprop="position" content="3" />
+                            </li><li class="ui mini breadcrumb">
+                                <div class="left"> <i class="right angle tiny icon"></i> 
+                                </div>
+                                <h1 class="grey-text">AT Agraharam, Guntur, Andhra Pradesh Restaurants
+                                </h1>
+                            </li></ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="resp-search-container" class="search-box-area"></div>
+
+<div class="clear"></div>
+
+   	<div class="wrapper mtop">
+        <div class="tac pbot0 col-l-16">
+         	<div class="ad-banner-text">Advertisement</div>
+           	<div class="inlineblock">
+  <div
+    id="div-gpt-ad-2166145-0"
+    style="width: 980px; height: 120px;"
+  >
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag
+          .pubads()
+          .display(
+            '/71079897/ca-pub-9120564410873389-tag/8144769601',
+            [980, 120],
+            'div-gpt-ad-2166145-0'
+          );
+        googletag.pubads().collapseEmptyDivs();
+      });
+    </script>
+  </div>
+</div>
+<script type="text/javascript">
+            zomato = window.zomato || {};
+            zomato.shouldLoadGoogleAds = true;
+        </script>        </div>
+  	</div>
+<section>
+    <div id="mainframe" class="wrapper">
+        <div class="ui inverted dimmer result-loading">
+            <div class="ui red text loader" ></div>
+        </div>
+        <div class="row">
+            <div class="col-l-16 search-top-area clearfix">
+                <div class="search-header mb5">
+<!-- Ad start -->
+<!-- Ad end -->
+<!-- Search Title Start -->
+                  <h1 class="search_title ptop pb5 fn mb0 mt10">
+    Order food online in AT Agraharam, Guntur, Andhra Pradesh
+  </h1>
+    <!-- Search Title end -->
+<!-- search subtitle start -->
+    <!-- search subtitle end -->
+<!-- tag functionality start -->
+    <div class="clear"></div>
+
+    
+    <div class="clear"></div>
+<!-- tag functionality end -->
+
+        
+
+
+</div>
+<div class="clear"></div>            </div>
+                        <div class="clear"></div>
+            <div class="col-l-16">
+                            <div class="search_category_wrapper col-l-11 hidden">
+                    <div class="search_category_container search_category_container_no_scroll ui stackable menu" style="overflow: hidden;">
+                        <a id="scroll_left_arrow" class="item left cursor-pointer"><i class="chevron circle left icon"></i></a>
+                                                <a href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188" class='item search_category search_cat_all active red'>All</a>
+                        <a href='https://www.zomato.com/guntur/restaurants?delivery_subzone=18188&category=1&order-online=1' class='item search_category'>Delivery</a><a href='https://www.zomato.com/guntur/restaurants?delivery_subzone=18188&category=8&order-online=1' class='item search_category'>Breakfast</a><a href='https://www.zomato.com/guntur/restaurants?delivery_subzone=18188&category=9&order-online=1' class='item search_category'>Lunch</a><a href='https://www.zomato.com/guntur/restaurants?delivery_subzone=18188&category=10&order-online=1' class='item search_category'>Dinner</a><a href='https://www.zomato.com/guntur/restaurants?delivery_subzone=18188&category=6&order-online=1' class='item search_category'>Cafés</a>                        <a id="scroll_right_arrow" class="item right cursor-pointer"><i class="chevron circle right icon"></i></a>
+                    </div>
+                </div>
+                            <div class="row">
+                    <div class="mt10">
+                                                                                <div role="group" class="col-s-16 col-l-3 search-filter-container pr0 ">
+                                                                                                
+
+<div class="additional-options mt0 ui segment">
+        <div class="ui header medium mt0 mb10">
+        Filters    </div>
+    
+    
+    
+    
+        <div class="search_filter checkboxes pb5">
+            <a data-input-name="order-online" title="Clear filter"
+                href="/guntur/restaurants"
+                class="sel filter filter-selected sf bboth option  ui checkbox"
+                data-order-online = 1
+                id="order-online-filter">
+            <div class="ui prom-filter-box-text checkbox checked">
+                <input type="checkbox" checked>
+                <span class="bold  zgreen ">Order Food Online</span>
+            </div>
+        </a>
+            </div>                            
+
+                    <div class="filter-padding search-filter-tab pt0 pb0 mtop">
+                <div class="ui header small mb0">
+                    <div class="search-filter-label pb10" tabindex="0" title="Quick Filters">
+                        Quick Filters                    </div>
+                </div>
+                <div class="content">
+                    <div class="search-filters-container">
+                        <div id="filter-more-html-area">
+                            <div id="more-filters">
+                                <form id="search-page-form" method="GET">
+
+    
+    
+    
+    
+    
+    <div class="ui celled list additional-options clearfix mt0">
+            <div class="search_filter checkboxes pb5">
+                        <a data-input-name="veg" title="Show vegetarian restaurants only "
+                    href="/guntur/order-food-online?delivery_subzone=18188&amp;veg=1"
+                    class="filter bboth sf option  ui checkbox"
+                    data-veg = 0
+                    id="veg-filter">
+                <span class="link_hover">Pure veg</span>
+            </a>
+                        </div><div class="search_filter checkboxes pb5">
+                        <a data-input-name="online_payment" title="Show restaurants accepting Online Payments "
+                    href="/guntur/order-food-online?delivery_subzone=18188&amp;online_payment=1"
+                    class="filter bboth sf option  ui checkbox"
+                    data-online_payment = 0
+                    id="online_payment-filter">
+                <span class="link_hover">Online Payments</span>
+            </a>
+                        </div>    </div>
+</form>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+                        <div class="clear"></div>
+
+               
+            <div class="filter-padding search-filter-tab pt0 pb0">         
+                <div class="mtop"></div>
+                <div class="ui header small margin0">
+                    <div class="search-filter-label pb5" tabindex="0" title="Sort by">Sort by</div>
+                </div>            
+                <a  href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188"><div class="search_filter sort cursor-pointer"><span class="zgreen bold">Popularity <span class="grey-text"> - high to low </span></span></div></a><a  href="/guntur/order-food-online?delivery_subzone=18188&sort=delivery_rating"><div class="search_filter sort cursor-pointer"><span class="link_hover">Delivery Rating <span class="grey-text"> - high to low </span></span></div></a><a  href="https://www.zomato.com/guntur/best-online-ordering-restaurants?delivery_subzone=18188"><div class="search_filter sort cursor-pointer"><span class="link_hover">Rating <span class="grey-text"> - high to low </span></span></div></a><a   href="/guntur/order-food-online?delivery_subzone=18188&sort=recent"><div class="search_filter sort cursor-pointer"><span class="link_hover">Recently Added <span class="grey-text"> - new to old </span></span></div></a>            </div>
+            
+                        
+
+            
+
+            <div class="search-filter-tab pt0 pb0 mtop" id="filter-cuisines-html-area">
+                <div class="ui header small mb0">
+                    <div class="search-filter-label pb5" tabindex="0" title="Cuisine">Cuisine</div>       
+                </div>                
+                <div class="cursor-pointer">
+                                                                                    <a href="https://www.zomato.com/guntur/order-biryani-online?delivery_subzone=18188" ><div title="Biryani Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">Biryani <span class="right grey-text">11</span></div></a><a href="https://www.zomato.com/guntur/order-north-indian-online?delivery_subzone=18188" ><div title="North Indian Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">North Indian <span class="right grey-text">7</span></div></a><a href="https://www.zomato.com/guntur/order-fast-food-online?delivery_subzone=18188" ><div title="Fast Food Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">Fast Food <span class="right grey-text">5</span></div></a><a href="https://www.zomato.com/guntur/order-beverages-online?delivery_subzone=18188" ><div title="Beverages Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">Beverages <span class="right grey-text">5</span></div></a><a href="https://www.zomato.com/guntur/order-chinese-online?delivery_subzone=18188" ><div title="Chinese Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">Chinese <span class="right grey-text">3</span></div></a><a href="https://www.zomato.com/guntur/order-lebanese-online?delivery_subzone=18188" ><div title="Lebanese Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">Lebanese <span class="right grey-text">3</span></div></a><a href="https://www.zomato.com/guntur/order-south-indian-online?delivery_subzone=18188" ><div title="South Indian Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">South Indian <span class="right grey-text">3</span></div></a><a href="https://www.zomato.com/guntur/order-burger-online?delivery_subzone=18188" ><div title="Burger Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">Burger <span class="right grey-text">2</span></div></a><a href="https://www.zomato.com/guntur/order-andhra-online?delivery_subzone=18188" ><div title="Andhra Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">Andhra <span class="right grey-text">1</span></div></a><a href="https://www.zomato.com/guntur/order-cafe-online?delivery_subzone=18188" ><div title="Cafe Restaurants in AT Agraharam, Guntur, Andhra Pradesh" class="link_hover w100 search_filter cuisine">Cafe <span class="right grey-text">1</span></div></a>                                <div style="display: block;" class="cursor-pointer show-more-cuisines-filter link_hover w100 search_filter cuisine grey-text red_see_all clear" data-city-id="11339" data-cat-details='{&quot;url_append&quot;:&quot;delivery_subzone=18188&amp;new_router=1&amp;order-online=1&amp;city_id=11339&quot;}' hidden>See all cuisines</div>
+                                                            </div>
+            </div>
+
+                        <div class="clear"></div>
+
+
+
+
+<div class="search-filter-tab pt0 pb0 mtop">
+    <div class="ui header small mb0">
+        <div class="search-filter-label pb5" tabindex="0" title="Delivery Time">
+            Delivery Time        </div>       
+    </div>    
+    <div id="filter-cost-html-area" class="facet-list-dialog">
+        <a href="/guntur/order-food-online?delivery_subzone=18188&delivery-time=0" ><div class="link_hover w100 search_filter cft cursor-pointer">Up to 30 minutes <span class="right grey-text" >19</span></div></a><a href="/guntur/order-food-online?delivery_subzone=18188&delivery-time=1" ><div class="link_hover w100 search_filter cft cursor-pointer">Up to 45 minutes <span class="right grey-text" >19</span></div></a><a href="/guntur/order-food-online?delivery_subzone=18188&delivery-time=2" ><div class="link_hover w100 search_filter cft cursor-pointer">Up to 60 minutes <span class="right grey-text" >19</span></div></a>    </div>
+</div>
+
+
+
+<div class="search-filter-tab pt0 pb0 mtop" id="filter-cost-html-area-close">
+    <div class="ui header small mb0">
+        <div class="search-filter-label pb5" tabindex="0" title="Cost for two">Cost for two</div>       
+    </div>    
+    <div id="filter-cost-html-area" class="facet-list-dialog">
+                    <a href="/guntur/order-food-online?delivery_subzone=18188&cft=0" ><div class="link_hover w100 search_filter cft cursor-pointer">Less than ₹350 <span class="right grey-text" >7</span></div></a><a href="/guntur/order-food-online?delivery_subzone=18188&cft=1" ><div class="link_hover w100 search_filter cft cursor-pointer"> ₹350 to  ₹750<span class="right grey-text" >11</span></div></a><a href="/guntur/order-food-online?delivery_subzone=18188&cft=2" ><div class="link_hover w100 search_filter cft cursor-pointer"> ₹750 to  ₹1,500<span class="right grey-text" >0</span></div></a><a href="/guntur/order-food-online?delivery_subzone=18188&cft=3" ><div class="link_hover w100 search_filter cft cursor-pointer">₹1,500 +<span class="right grey-text" >0</span></div></a>            </div>
+</div>
+
+
+<div class="search-filter-tab pt0 pb0 mtop">
+    <div class="ui header small mb0">
+        <div class="search-filter-label pb5" tabindex="0" title="Delivery Time">
+            Minimum Order        </div>       
+    </div>    
+    <div id="filter-cost-html-area" class="facet-list-dialog">
+        <a href="/guntur/order-food-online?delivery_subzone=18188&min-order=3" ><div class="link_hover w100 search_filter cft cursor-pointer">No minimum order <span class="right grey-text" >0</span></div></a>        <a href="/guntur/order-food-online?delivery_subzone=18188&min-order=0" ><div class="link_hover w100 search_filter cft cursor-pointer">Up to ₹150 <span class="right grey-text" >19</span></div></a><a href="/guntur/order-food-online?delivery_subzone=18188&min-order=1" ><div class="link_hover w100 search_filter cft cursor-pointer">Up to ₹250 <span class="right grey-text" >19</span></div></a><a href="/guntur/order-food-online?delivery_subzone=18188&min-order=2" ><div class="link_hover w100 search_filter cft cursor-pointer">Up to ₹500 <span class="right grey-text" >19</span></div></a>    </div>
+</div>
+
+
+
+    </div>
+
+                                <div class="clear"></div>
+                                
+                            </div>
+                            <div class="clear hidden filters_clearfix"></div>
+                            <div class="hidden mobile-block tablet-portrait-block">
+                                <div class="clear"></div>
+                                                            </div>
+                        
+                        
+                                                                                                    
+                                                                            <div class="col-l-13 plr15">
+                                <div class="mbot">
+                                    <div class="ui segment location_search">
+                                        <div class="row">
+                                            <div class="col-l-6 col-s-16 plr20">
+                                                <div class="row pl5i pb5 search-input-header">
+                                                    <h5>Searching in...</h5>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="ui fluid search o2-location_search ">
+                                                        <div class="ui left icon input w100" style="float: none;">
+                                                            <i class="location arrow icon"></i>
+                                                            <input class="prompt input_box auto_detect_enabled" placeholder="Please select your delivery location" value="AT Agraharam, Guntur, Andhra Pradesh">
+                                                            <button type="button" class="ui icon button auto_detect" href="1" data-get-params='{"delivery_subzone":"18188","new_router":"1","order-online":"1","city_id":"11339","subzone":"172042"}'>
+                                                              <i class="icon" data-icon="8"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-l-10 col-s-16 plr20">
+                                                <div class="row pl5i pb5 search-input-header ">
+                                                    <h5>Searching for...</h5>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="ui fluid search o2-restaurant_search ">
+                                                        <div class="ui left icon input w100" style="float: none;">
+                                                            <input class="prompt input_box" placeholder="Search for restaurants or cuisines..." autocomplete="off">
+                                                            <i class="search arrow icon"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="col-l-16">
+                                                <div class="ui red message not-available-errors hidden content" style="margin-top:10px;">We are not yet at your location</div>
+                                                <div class="ui red message auto_detect_error hidden content" style="margin-top:10px;">Sorry, we could not detect your delivery location. Please select a delivery area by typing in the search box above.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                                                                        <div class="col-s-16 search-start plr15 col-l-13 " id="search-start">
+                                                    <div class="row">
+                                <div class="col-s-16 search_results mbot">
+                                                                                                                                                    <section id="search-results-container" class="clearfix">
+                                        
+                                            <div class="orig-search-list-container  ">
+                                                    <div class="ui inverted dimmer">
+                                                    <div class="ui red text loader" style="top: 70%; position: fixed;"></div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                                                                <div id="orig-search-list" class="ui two cards"
+                                                 style="-webkit-flex-direction: row;"                                                >
+                                                <!-- START SHOWING SEARCH RESULTS -->
+                                                <div class=" card search-o2-card mr0"
+  data-position="1-1"
+  data-res_id="18796083"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18796083" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/3/18796083/8052515b0025029f4b7564abdab2ce38_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="london shakes Restaurant, Lakshmipuram" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18796083" target="_blank" data-source="o2search-title">
+          The London Shakes
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Beverages, Sandwich</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹100 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18796083" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18796083 res-rating-nf right level-6 bold">
+          3.6
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18796083 grey-text fontsize5">107 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for The London Shakes, Lakshmipuram" data-result-type="ResCard_Reviews">
+              <span class="grey-text">32 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container  single ">
+                <a class="ui order_search_button button icon o2_link" data-res_id="18796083" href="https://www.zomato.com/restaurant?tab=order&res_id=18796083" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-2"
+  data-res_id="19007271"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=19007271" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                          <div class="ui green label discount_label">10% OFF</div>
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/1/19007271/4d30e4ba8476bf47e79f05e2240ad470_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="al ajaib restaurant Restaurant, Brodipet" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=19007271" target="_blank" data-source="o2search-title">
+          Al Ajaib Restaurant
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani, Chinese</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹250 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="19007271" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-19007271 res-rating-nf right level-6 bold">
+          3.5
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-19007271 grey-text fontsize5">184 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Al Ajaib Restaurant, Brodipet" data-result-type="ResCard_Reviews">
+              <span class="grey-text">59 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container ">
+                  <span class="offer-text zgreen pt10 pb10 plr15   ln18 ">
+                      <img src="https://b.zmtcdn.com/data/o2_assets/8dadd4738f4401a703d24b19be7cce911539862914">
+                    10% off on all orders above ₹199.
+          </span>
+                <a class="ui order_search_button button icon o2_link" data-res_id="19007271" href="https://www.zomato.com/restaurant?tab=order&res_id=19007271" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-3"
+  data-res_id="18900916"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18900916" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/6/18900916/4dde34853100b2ce462295a711793b7c_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="babu biryani point Restaurant, Old Guntur" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18900916" target="_blank" data-source="o2search-title">
+          Babu Biryani Point
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹100 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18900916" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18900916 res-rating-nf right level-6 bold">
+          3.7
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18900916 grey-text fontsize5">677 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Babu Biryani Point, Old Guntur" data-result-type="ResCard_Reviews">
+              <span class="grey-text">126 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container  single ">
+                <a class="ui order_search_button button icon o2_link" data-res_id="18900916" href="https://www.zomato.com/restaurant?tab=order&res_id=18900916" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-4"
+  data-res_id="18741306"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18741306" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/6/18741306/f32d615aa297d7fcaa90bbb18e68620b_o2_featured_v2.jpeg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="flash kafei dian Restaurant, Lakshmipuram" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18741306" target="_blank" data-source="o2search-title">
+          Flash Kafei Dian
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Continental, Cafe, Biryani, Fast Food</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹300 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18741306" data-variation="mini inverted" data-content="Average" class="rating-popup rating-for-18741306 res-rating-nf right level-5 bold">
+          3.3
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18741306 grey-text fontsize5">248 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Flash Kafei Dian, Lakshmipuram" data-result-type="ResCard_Reviews">
+              <span class="grey-text">40 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container  single ">
+                <a class="ui order_search_button button icon o2_link" data-res_id="18741306" href="https://www.zomato.com/restaurant?tab=order&res_id=18741306" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-5"
+  data-res_id="18737864"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18737864" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                          <div class="ui green label discount_label">15% OFF</div>
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/4/18737864/3e3098db4380f36138454b4a4c4981d2_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="ajmeer maharaj hotel Restaurant, Old Guntur" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18737864" target="_blank" data-source="o2search-title">
+          Ajmeer Maharaj Hotel
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani, Kebab, North Indian</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹250 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18737864" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18737864 res-rating-nf right level-6 bold">
+          3.7
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18737864 grey-text fontsize5">245 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Ajmeer Maharaj Hotel, Old Guntur" data-result-type="ResCard_Reviews">
+              <span class="grey-text">15 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container ">
+                  <span class="offer-text zgreen pt10 pb10 plr15   ln18 ">
+                      <img src="https://b.zmtcdn.com/data/o2_assets/8dadd4738f4401a703d24b19be7cce911539862914">
+                    15% off on all orders above ₹100.
+          </span>
+                <a class="ui order_search_button button icon o2_link" data-res_id="18737864" href="https://www.zomato.com/restaurant?tab=order&res_id=18737864" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-6"
+  data-res_id="19086883"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=19086883" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/3/19086883/428a6ef9ec15966f9b957f166e82c644_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="k kitchens Restaurant, Brodipet" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=19086883" target="_blank" data-source="o2search-title">
+          K Kitchens
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Fast Food, Beverages</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹100 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="19086883" data-variation="mini inverted" data-content="Not rated" class="rating-popup rating-for-19086883 res-rating-nf right level-0 bold">
+          -
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+      
+      
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container  single ">
+                <a class="ui order_search_button button icon o2_link" data-res_id="19086883" href="https://www.zomato.com/restaurant?tab=order&res_id=19086883" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-7"
+  data-res_id="18965710"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18965710" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                          <div class="ui green label discount_label">10% OFF</div>
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/0/18965710/9849a221c77439f5104e53ec62f4a8cb_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="sarangi biryani point Restaurant, Lakshmipuram" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18965710" target="_blank" data-source="o2search-title">
+          Sarangi Biryani Point
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani, South Indian, North Indian</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹150 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18965710" data-variation="mini inverted" data-content="Average" class="rating-popup rating-for-18965710 res-rating-nf right level-5 bold">
+          3.1
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18965710 grey-text fontsize5">96 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Sarangi Biryani Point, Lakshmipuram" data-result-type="ResCard_Reviews">
+              <span class="grey-text">54 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container ">
+                  <span class="offer-text zgreen pt10 pb10 plr15   ln18 ">
+                      <img src="https://b.zmtcdn.com/data/o2_assets/8dadd4738f4401a703d24b19be7cce911539862914">
+                    10% off on all orders above ₹100.
+          </span>
+                <a class="ui order_search_button button icon o2_link" data-res_id="18965710" href="https://www.zomato.com/restaurant?tab=order&res_id=18965710" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-8"
+  data-res_id="19129491"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=19129491" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/1/19129491/09e7e40ef2591f14cf7649dfe2a4fddf_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="sri anjaneya biryani point Restaurant, Old Guntur" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=19129491" target="_blank" data-source="o2search-title">
+          Sri Anjaneya Biryani Point
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹100 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="19129491" data-variation="mini inverted" data-content="Average" class="rating-popup rating-for-19129491 res-rating-nf right level-5 bold">
+          3.4
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-19129491 grey-text fontsize5">66 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Sri Anjaneya Biryani Point, Old Guntur" data-result-type="ResCard_Reviews">
+              <span class="grey-text">28 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container  single ">
+                <a class="ui order_search_button button icon o2_link" data-res_id="19129491" href="https://www.zomato.com/restaurant?tab=order&res_id=19129491" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-9"
+  data-res_id="18900537"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18900537" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/7/18900537/828a3b7eb0f5ca148848720fea0fe670_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="thalis multi cuisine family restaurant Restaurant, Lakshmipuram" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18900537" target="_blank" data-source="o2search-title">
+          Thalis Multi Cuisine Family Restaurant
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani, South Indian, North Indian</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹200 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18900537" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18900537 res-rating-nf right level-6 bold">
+          3.6
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18900537 grey-text fontsize5">122 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Thalis Multi Cuisine Family Restaurant, Lakshmipuram" data-result-type="ResCard_Reviews">
+              <span class="grey-text">28 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container  single ">
+                <a class="ui order_search_button button icon o2_link" data-res_id="18900537" href="https://www.zomato.com/restaurant?tab=order&res_id=18900537" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-10"
+  data-res_id="18740967"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18740967" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/chains/7/18740967/837d8332d606699b9cb2f0ed5c90acf4_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="taj regency Restaurant, Old Guntur" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18740967" target="_blank" data-source="o2search-title">
+          The Taj Regency
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani, North Indian, South Indian, Chinese</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹250 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18740967" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18740967 res-rating-nf right level-6 bold">
+          3.7
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18740967 grey-text fontsize5">112 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for The Taj Regency, Old Guntur" data-result-type="ResCard_Reviews">
+              <span class="grey-text">15 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+            <div class="o2_button_container  single ">
+                <a class="ui order_search_button button icon o2_link" data-res_id="18740967" href="https://www.zomato.com/restaurant?tab=order&res_id=18740967" data-app_link="" data-source="o2search-button">
+            Order Online
+            <i class="angle right icon"></i>
+        </a>
+      </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-11"
+  data-res_id="18740243"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18740243" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/chains/3/18740243/e1067e29f5008a65557a5cdecb390046_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="shawarma bites Restaurant, Brodipet" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18740243" target="_blank" data-source="o2search-title">
+          Shawarma Bites
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Lebanese, Fast Food, Beverages</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹100 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18740243" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18740243 res-rating-nf right level-6 bold">
+          3.5
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18740243 grey-text fontsize5">87 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Shawarma Bites, Brodipet" data-result-type="ResCard_Reviews">
+              <span class="grey-text">17 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-12"
+  data-res_id="18741392"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18741392" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/2/18741392/50410f6fd620b5b1c2b85808faf34cc7_o2_featured_v2.gif?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="meat eat Restaurant, Lakshmipuram" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18741392" target="_blank" data-source="o2search-title">
+          Meat & Eat
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Burger, Fast Food, Beverages</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹200 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18741392" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18741392 res-rating-nf right level-6 bold">
+          3.6
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18741392 grey-text fontsize5">68 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Meat &amp;amp; Eat, Lakshmipuram" data-result-type="ResCard_Reviews">
+              <span class="grey-text">13 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-13"
+  data-res_id="18737912"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18737912" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                          <div class="ui green label discount_label">10% OFF</div>
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/2/18737912/3e11018a51e4e48559689770f6d0387f_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="ice n spice shawarma corner Restaurant, Old Guntur" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18737912" target="_blank" data-source="o2search-title">
+          Ice N Spice Shawarma Corner
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Lebanese, North Indian, Biryani</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹150 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18737912" data-variation="mini inverted" data-content="Average" class="rating-popup rating-for-18737912 res-rating-nf right level-5 bold">
+          3.4
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18737912 grey-text fontsize5">267 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Ice N Spice Shawarma Corner, Old Guntur" data-result-type="ResCard_Reviews">
+              <span class="grey-text">82 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-14"
+  data-res_id="18737849"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18737849" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/chains/9/18737849/454eab710b6209de34875612df200980_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="biryani palace restaurant Restaurant, Old Guntur" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18737849" target="_blank" data-source="o2search-title">
+          Biryani Palace Restaurant
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani, North Indian, Chinese, Lebanese</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹300 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18737849" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18737849 res-rating-nf right level-6 bold">
+          3.7
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18737849 grey-text fontsize5">441 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Biryani Palace Restaurant, Old Guntur" data-result-type="ResCard_Reviews">
+              <span class="grey-text">71 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-15"
+  data-res_id="19079086"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=19079086" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/6/19079086/a32e4b27c854fed4cd9b9ce9e45972ee_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="lassi store Restaurant, Lakshmipuram" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=19079086" target="_blank" data-source="o2search-title">
+          Lassi Store
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Beverages</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹100 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="19079086" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-19079086 res-rating-nf right level-6 bold">
+          3.6
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-19079086 grey-text fontsize5">69 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Lassi Store, Lakshmipuram" data-result-type="ResCard_Reviews">
+              <span class="grey-text">25 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-16"
+  data-res_id="18798707"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18798707" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                          <div class="ui green label discount_label">20% OFF</div>
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/chains/7/18798707/4f26676762e003f9dacc19d9879d01be_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="family fast food Restaurant, Old Guntur" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18798707" target="_blank" data-source="o2search-title">
+          Family Fast food
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Fast Food, North Indian</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹150 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18798707" data-variation="mini inverted" data-content="Average" class="rating-popup rating-for-18798707 res-rating-nf right level-5 bold">
+          3.4
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18798707 grey-text fontsize5">87 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Family Fast food, Old Guntur" data-result-type="ResCard_Reviews">
+              <span class="grey-text">26 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-17"
+  data-res_id="18739259"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18739259" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/chains/9/18739259/d59d6e2f48630f73ee62c4e58ebf63fb_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="basha hotel Restaurant, Srinivasarao Pet" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18739259" target="_blank" data-source="o2search-title">
+          Basha Hotel
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Andhra</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹100 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18739259" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18739259 res-rating-nf right level-6 bold">
+          3.5
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18739259 grey-text fontsize5">71 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Basha Hotel, Srinivasarao Pet" data-result-type="ResCard_Reviews">
+              <span class="grey-text">7 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-18"
+  data-res_id="19180936"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=19180936" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/6/19180936/6957f617883d1337fed703c65143d186_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="bismillah star dum biryani point Restaurant, Old Guntur" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=19180936" target="_blank" data-source="o2search-title">
+          Bismillah Star Dum Biryani Point
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Biryani</div>
+                      <div class="grey-text nowrap   ln24 " >Cost  for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="19180936" data-variation="mini inverted" data-content="Average" class="rating-popup rating-for-19180936 res-rating-nf right level-5 bold">
+          3.2
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-19180936 grey-text fontsize5">23 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for Bismillah Star Dum Biryani Point, Old Guntur" data-result-type="ResCard_Reviews">
+              <span class="grey-text">8 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+<div class=" card search-o2-card mr0"
+  data-position="1-19"
+  data-res_id="18978475"
+  data-app_link=""
+  data-city_id="11339"
+  data-city="Guntur"
+  data-dsz="AT Agraharam"
+  data-dsz_id="18188"
+>
+
+  <div class="content search-result" href="https://www.zomato.com/restaurant?tab=order&res_id=18978475" style="cursor: pointer;">
+  <div class="col-s-5 col-m-4 pl0">
+        <div class="search_left_featured clearfix">
+                        <div class="feat-img lazy" style="background-image:url(https://b.zmtcdn.com/images/placeholder_200.png);background-repeat: repeat;" data-original="https://b.zmtcdn.com/data/pictures/chains/5/18978475/97017bf0edd0e01504963129db5c814b_o2_featured_v2.jpg?fit=around%7C200%3A200&amp;crop=200%3A200%3B%2A%2C%2A"></div>
+            <div class="clear"></div>
+       </div>
+  </div>
+  <div class="col-s-11 col-m-12 plr0">
+    <div class="col-l-12 col-s-13">
+      <div class="row">
+        <a class="result-order-flow-title hover_feedback zred bold   fontsize0 ln20 " title="hangout Restaurant, Lakshmipuram" data-result-type="ResCard_Name" href="https://www.zomato.com/restaurant?tab=order&res_id=18978475" target="_blank" data-source="o2search-title">
+          The Hangout
+        </a>
+        <div class="description">
+          <div class="clear"></div>
+          <div class="grey-text nowrap  ln24 " > Italian, Burger, Pizza</div>
+                      <div class="grey-text nowrap   ln24 " >Cost ₹200 for one</div>
+            <div class="nowrap  ln24 " >Min ₹50 &nbsp;<span class="middot"> &middot; </span> &nbsp;Up to 30 min </div>
+            <div class="nowrap  ln24 " >
+            Accepts cash &amp; online payments</div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ta-right floating search_result_rating col-s-3 col-l-4 right pr0" style="line-height: 14px;">
+            <div data-res-id="18978475" data-variation="mini inverted" data-content="Good" class="rating-popup rating-for-18978475 res-rating-nf right level-6 bold">
+          3.6
+      </div>
+      <div class="clear mb5"></div>
+
+      <!-- show the vote count only if there's a rating -->
+                        <span class="rating-votes-div-18978475 grey-text fontsize5">81 votes</span>
+                  
+      
+                <div class="result-order-flow-review search-result-reviews right fontsize5" title="User reviews for The Hangout, Lakshmipuram" data-result-type="ResCard_Reviews">
+              <span class="grey-text">13 reviews</span>
+          </div>
+          </div>
+    <div class="clear"></div>
+          </div>
+  </div>
+              <div class="ui order_search_button off button icon">
+            <p class="zdark">Currently Offline</p>
+        </div>
+        </div>
+
+                                                <!-- END SHOWING SEARCH RESULTS -->
+
+                                                </div>
+                                            </div>
+                                            <div class="search-pagination-top clearfix  mtop ">
+                                                <div class="row"><div class="col-l-4 mtop pagination-number" tabindex="0"
+    aria-label="Page 1 of 2 "><div>Page <b>1</b> of <b>2</b> </div></div>
+<div class="col-l-12">
+    <div class="res-right right"><div role="listbox" data-only_page_str="" class=" ui pagination menu small pagination-control res-menu-paginator"><div class="item paginator_item   disabled prev" aria-hidden="true"><div class="pr5"><i class="left angle icon"></i></div></div><a  class="paginator_item active item " aria-selected="true" aria-label="Go to Page 1" href="/guntur/order-food-online?delivery_subzone=18188&page=1" title="Go to Page 1">1</a><a  class="paginator_item item" aria-label="Go to Page 2" href="/guntur/order-food-online?delivery_subzone=18188&page=2" title="Go to Page 2" >2</a><a  class="paginator_item   next item" aria-label="Next Page" href="/guntur/order-food-online?delivery_subzone=18188&page=2" title="Next Page" ><div class="ml5"> <i class="right angle icon"></i> </div> </a></div></div>
+</div>
+<div class="clear"></div></div>
+                                                <div class="ui divider"></div>
+                                            </div>
+
+                                                                                </section>
+                                                                    </div>
+                                <div class="col-s-16 restaurant_search hidden">
+                                                                        <div id="orig-search-list" class="restaurant-result ui two cards"
+                                     style="-webkit-flex-direction: row;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                                                                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear ieclear"></div>
+</section>
+<div class="wrapper">
+    <div class="ad-bg">
+        <div class="ad-banner-text">ADVERTISEMENT</div><div class="inlineblock">
+  <div
+    id="div-gpt-ad-5263419-0"
+    style="width: 980px; height: 120px;"
+  >
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag
+          .pubads()
+          .display(
+            '/14592557081/ca-pub-7613048120618893-tag/5014450930',
+            [980, 120],
+            'div-gpt-ad-5263419-0'
+          );
+        googletag.pubads().collapseEmptyDivs();
+      });
+    </script>
+  </div>
+</div>
+<script type="text/javascript">
+            zomato = window.zomato || {};
+            zomato.shouldLoadGoogleAds = true;
+        </script>    </div>
+</div>
+<div class="clear ieclear"></div>
+
+    <!-- Frequent searches leading to this place -->
+        <div class="ui divider"></div>
+    <div class="wrapper pbot ptop0 grey-text">
+        <section id="selflinks-container" class="section">
+            <div class="search-fq tiny mb0" tabindex="0">
+                Frequent searches leading to this page            </div>
+            <div class="userKeywords">
+                <a class="grey-text" href="/guntur/order-food-online?delivery_subzone=18188">Order food online in AT Agraharam, Guntur, Andhra Pradesh</a>            </div>
+            <div class="clear"></div>
+        </section>
+    </div>
+    
+
+
+
+<footer id="footer" class=" ">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-m-10">
+                <h3 class="footer-top logo--footer" tabindex="0">
+                    <a class="logo--header" href="https://www.zomato.com/guntur" title="Find the best restaurants, cafés, and bars in Guntur">
+    <img class="br3" src="https://b.zmtcdn.com/images/logo/zomato_flat_bg_logo.svg" alt="Find the best restaurants, cafés, and bars in Guntur" width="60px"/>
+</a>
+
+                </h3>
+            </div>
+                            <div class="col-m-6 ptop0">
+                                            <div class="ui dropdown lang-dropdown">
+  <div class="default text" data-icon="g">English</div>
+  <div class="ml10 right"><i data-icon="&#61655;" class="ui white tiny icon"></i></div>  
+  <div class="vertical menu langbox__dropdown" style="min-width: 100%;">
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=cs&amp;user_lang_change=1" style="padding-left: 28px !important;">Čeština</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=en&amp;user_lang_change=1" style="padding-left: 28px !important;">English</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=es&amp;user_lang_change=1" style="padding-left: 28px !important;">Español</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=hi&amp;user_lang_change=1" style="padding-left: 28px !important;">हिंदी</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=id&amp;user_lang_change=1" style="padding-left: 28px !important;">Indonesian</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=it&amp;user_lang_change=1" style="padding-left: 28px !important;">Italian</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=pl&amp;user_lang_change=1" style="padding-left: 28px !important;">Polish</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=por&amp;user_lang_change=1" style="padding-left: 28px !important;">Português (BR)</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=pt&amp;user_lang_change=1" style="padding-left: 28px !important;">Português (PT)</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=sk&amp;user_lang_change=1" style="padding-left: 28px !important;">Slovenčina</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=tr&amp;user_lang_change=1" style="padding-left: 28px !important;">Türkçe</a>
+        	<a class="item" href="https://www.zomato.com/guntur/order-food-online?delivery_subzone=18188&amp;lang=vi&amp;user_lang_change=1" style="padding-left: 28px !important;">Vietnamese</a>
+      </div>
+</div>                                    </div>
+                    </div>
+
+                <div class="footer_divider"></div>
+        <div class="row">
+            <div class="col-m-4">
+                <h3>About Zomato</h3>
+                <ul class="footer-links--big">
+                    <li>
+                        <a href="https://www.zomato.com/about" target = "_blank">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://culture.zomato.com" target = "_blank">
+                            Culture
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://zomato.com/blog" target = "_blank">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zomato.com/careers" target = "_blank">
+                            Careers
+                        </a>
+                    </li>
+                    <li class="contact-big-footer-link">
+                        <a href="https://www.zomato.com/contact" target="_blank">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-m-5">
+                <h3>For Foodies</h3>
+                <ul class="footer-links--big">
+                    <li>
+                        <a href="https://www.zomato.com/policies">
+                            Code of Conduct
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://community.zomato.com">
+                            Community
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zomato.com/verified">
+                            Verified Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zomato.com/bloggers">
+                            Blogger Help
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://developers.zomato.com">
+                            Developers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zomato.com/mobile">
+                            Mobile Apps
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-m-7">
+                <h3>For Restaurants</h3>
+                <div class="row">
+                    <div class="col-m-8">
+                        <ul class="footer-links--big">
+                            <li>
+                                <a href="https://www.zomato.com/addrestaurant">
+                                    Add a Restaurant
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zomato.com/business">
+                                    Claim your Listing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zomato.com/business/apps">
+                                    Business App
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zomato.com/guidelines/merchant">
+                                    Business Owner Guidelines
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://business-blog.zomato.com/">
+                                    Business Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zomato.com/business/widgets">
+                                    Restaurant Widgets
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zomato.com/business">
+                                    Products for Businesses
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-m-8">
+                        <ul class="footer-links--big">
+                            <li>
+                                <a href="https://www.zomato.com/business/advertise">
+                                    Advertise
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zomato.com/business/order">
+                                    Order
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zomato.com/book">
+                                    Book
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.zomato.com/trace">
+                                    Trace
+                                </a>
+                            </li>
+                            <li>
+                                <a class="all_web_jumbo_click_track" data-total_jumbo_click_payload="[{&quot;table&quot;:&quot;jevent&quot;,&quot;payload&quot;:{&quot;ename&quot;:&quot;hyperpure_footer_link&quot;,&quot;var1&quot;:55314605}}]" href="https://hyperpure.com/">
+                                    Hyperpure
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_divider mt5"></div>
+        <div class="row">
+            <div class="col-m-16"><h3 tabindex="0">Countries</h3></div>
+                                                                    
+                        <div class="col-m-1by5 col-m-4">
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Australia" href="https://www.zomato.com/australia">
+                                Australia
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Brasil" href="https://www.zomato.com/brasil">
+                                Brasil
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Canada" href="https://www.zomato.com/canada">
+                                Canada
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Chile" href="https://www.zomato.com/chile">
+                                Chile
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Czech Republic" href="https://www.zomato.com/czech-republic">
+                                Czech Republic
+                            </a>
+                        </li>
+                    </ul>
+                            </div>
+                        <div class="col-m-1by5 col-m-4">
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in India" href="https://www.zomato.com/india">
+                                India
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Indonesia" href="https://www.zomato.com/indonesia">
+                                Indonesia
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Ireland" href="https://www.zomato.com/ireland">
+                                Ireland
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Italy" href="https://www.zomato.com/italy">
+                                Italy
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Lebanon" href="https://www.zomato.com/lebanon">
+                                Lebanon
+                            </a>
+                        </li>
+                    </ul>
+                            </div>
+                        <div class="col-m-1by5 col-m-4">
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Malaysia" href="https://www.zomato.com/malaysia">
+                                Malaysia
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in New Zealand" href="https://www.zomato.com/newzealand">
+                                New Zealand
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Philippines" href="https://www.zomato.com/philippines">
+                                Philippines
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Poland" href="https://www.zomato.com/poland">
+                                Poland
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Portugal" href="https://www.zomato.com/portugal">
+                                Portugal
+                            </a>
+                        </li>
+                    </ul>
+                            </div>
+                        <div class="col-m-1by5 col-m-4">
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Qatar" href="https://www.zomato.com/qatar">
+                                Qatar
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Singapore" href="https://www.zomato.com/singapore-country">
+                                Singapore
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Slovakia" href="https://www.zomato.com/slovakia">
+                                Slovakia
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in South Africa" href="https://www.zomato.com/southafrica">
+                                South Africa
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Sri Lanka" href="https://www.zomato.com/srilanka">
+                                Sri Lanka
+                            </a>
+                        </li>
+                    </ul>
+                            </div>
+                        <div class="col-m-1by5 col-m-4">
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in Turkey" href="https://www.zomato.com/turkey">
+                                Turkey
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in UAE" href="https://www.zomato.com/uae">
+                                UAE
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in United Kingdom" href="https://www.zomato.com/uk">
+                                United Kingdom
+                            </a>
+                        </li>
+                    </ul>
+                                    <ul class="footer-links--big">
+                        <li>
+                            <a class="pl5" title="Restaurants in United States" href="https://www.zomato.com/united-states">
+                                United States
+                            </a>
+                        </li>
+                    </ul>
+                            </div>
+                    </div>
+        
+        <div class="footer_divider mt5"></div>
+        <div class="row footer_policy_links">
+            <div class="col-m-12">
+                <ul class="footer_horiz_list">
+                   <li>
+                        <a href="https://www.zomato.com/privacy">
+                            Privacy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zomato.com/conditions">
+                            Terms
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zomato.com/api_policy">
+                            API Policy
+                        </a>
+                    </li>
+                     <li>
+                        <a href="https://www.zomato.com/corporate-social-responsibility">
+                            CSR
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zomato.com/security">
+                            Security
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zomato.com/directory">
+                            Sitemap
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social-container col-m-4">
+                <a target="_blank" href="https://twitter.com/zomato"><div class="social-icons twitter" data-icon="&#x74;"></div></a>
+                <a target="_blank" href="https://www.instagram.com/zomato/"><div class="social-icons instagrm" data-icon="&#x34;"></div></a>
+                <a target="_blank" href="https://www.facebook.com/zomato"><div class="social-icons facebook" data-icon="&#xb6;"></div></a>
+            </div>
+        </div>
+
+        <div class="footer_divider"></div>
+        <div class="footer-bottom row">
+            <div class="footer-msg">
+                                   By continuing past this page, you agree to our <a href='http://www.zomato.com/conditions' rel='nofollow'>Terms of Service</a>, <a href='http://www.zomato.com/cookiepolicy' rel='nofollow'>Cookie Policy</a>, <a href='http://www.zomato.com/privacy' rel='nofollow'>Privacy Policy</a> and <a href='http://www.zomato.com/policies' rel='nofollow'>Content Policies</a>. All trademarks are properties of their respective owners. &copy; 2008-2020 - <a href='http://www.zomato.com'>Zomato</a>&trade; Media Pvt Ltd. All rights reserved.
+                            </div>
+        </div>
+        <a href="https://plus.google.com/104017429609258707097" rel="publisher" class="hidden">Find us on Google+</a>
+    </div>
+</footer>
+<div class="search-container" id="search-container"></div>
+<div id="photoviewer_container"></div>
+<div class="clear" id="fb-root"></div>
+
+<script type="text/javascript">
+if (typeof console != "undefined") {
+    console.log("Zomato - For the love of food!");
+    console.log("If looking under the hood is what you like, we\'d love to chat. www.zomato.com/careers");
+}
+</script>
+
+
+<script type="text/javascript">
+    var zomato = zomato || {};
+    zomato.device = zomato.device || {};
+    zomato.device.isMobile = Boolean();
+    zomato.device.isTablet = Boolean();
+    window.isSearchMobile = false;
+    function loadJSnew(path, func) {
+        var s = document.createElement("script");
+        s.src = path;
+        if (typeof func != 'undefined') {
+            s.onload = func;
+        }
+        document.body.appendChild(s);
+    }
+
+    function loadRest() {
+
+        window._B = window._B || {};
+        $(document).on('zreadyPageScripts', function() {
+        __jumboPayload = {"raw_url":"\/guntur\/order-food-online?delivery_subzone=18188","reference_search_id":"","keyword":"","location_id":18188,"location_type":"delivery_subzone_id","sort":null,"city_id":11339,"cuisine_id":[],"establishment_type_id":-1,"category":-1,"cft":-1,"page":1,"rows":30,"result_count":19,"filters":{"order-online":"1"},"results":[{"res_id":"18796083","ranking":1},{"res_id":"19007271","ranking":2},{"res_id":"18900916","ranking":3},{"res_id":"18741306","ranking":4},{"res_id":"18737864","ranking":5},{"res_id":"19086883","ranking":6},{"res_id":"18965710","ranking":7},{"res_id":"19129491","ranking":8},{"res_id":"18900537","ranking":9},{"res_id":"18740967","ranking":10},{"res_id":"18740243","ranking":11},{"res_id":"18741392","ranking":12},{"res_id":"18737912","ranking":13},{"res_id":"18737849","ranking":14},{"res_id":"19079086","ranking":15},{"res_id":"18798707","ranking":16},{"res_id":"18739259","ranking":17},{"res_id":"19180936","ranking":18},{"res_id":"18978475","ranking":19}],"language":"en","platform":"web"}; __jumboPayload.search_id = getSearchIDwithPagination && getSearchIDwithPagination('"city_id=11339delivery_subzone=18188new_router=1order-online=1"'); ;
+    if (!window.zomato) {
+        window.zomato = {};
+    }
+    window.zomato.O2_SELECTED_ADDRESS_REMEMBER_DURATION = 1/4;
+ 
+    if (typeof dataLayer != 'undefined') {
+        dataLayer.push({
+            'event' : 'SearchPageView',
+            'TopThreeSearchResults' : [{"res_id":"18796083"},{"res_id":"19007271"},{"res_id":"18900916"}]
+        });
+    } 
+        if (typeof contextTracker !== "undefined") {
+            contextTracker.init({"page_type":"search","order-online":"1","sort":"","location_id":"11339","location_type":"city"});
+        }
+                if(typeof Auth != 'undefined') {
+                if( window.howdy.m == 'facebook' || window.fbst.IS_FB_CONNECTED == true ){
+                    Auth.facebook.loggedin = true;
+                }
+                if ( window.howdy.m == "google" || window.gplus.IS_GPLUS_CONNECTED == true ){
+                    Auth.google.loggedin = true;
+                }
+                if(!window._B.ismobile ){
+                    Auth.doFirstLogin();
+                }
+            }
+        });
+
+        $(document).on('zready', function() {
+        window._B.ismobile = false;window._B.user_device = "desktop";        });
+    }
+
+    function loadjQuery() {
+        loadJSnew("https://static.zmtcdn.com/application/javascript/vendor/require_2.2.0.min.js",function(){
+            require.config({
+                waitSeconds : 30,
+                paths: {
+                    react : '//cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-with-addons.min',
+                    jquery : '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min',
+                    reactDom : '//cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.min',
+                    localizedStrings : 'https://www.zomato.com/genjs/v3/t-3a9fdffcc18eaf6ed62ffb81a9abf6b8/l-H4sIAAAAAAAAA0tJLc4uyS-ILyhP1M_JT07MyaxKTYkvLinKzEsv1svNzNPLKgYAdosQTyQAAAA/cl-en/h-7ecd5179a5939bb935e8be67a95bc9d0/fh-48f8c473ef437e2ba93612771787bfcb',
+                    adWordRemarketing: "//www.googleadservices.com/pagead/conversion_async"
+                }
+            });
+            require(['jquery'],function($){
+                window.$ = window.jQuery = window.jquery = $;
+                var jscripts = ["https:\/\/static.zmtcdn.com\/genjs\/v3\/t-11f07ff7a3245a0ef2b803da1ffbf70f\/l-H4sIAAAAAAAAA32SS3bDMAhFN9Qmi2lHnehgi8gkWLgSSmqvvvIvxRl0Ji6Cx09pyOOpp3i65rdJelA5McRQIOCMWul7iWeFECgG8ynhnfCRDckdpCWmF18Y87lDHjDNxBOwBOur5qq5CbQiN8J8DAe_hu_kWvpGLACfXRAJvOhevwum8TR9SFv1ZjJwqTI1cPUwTCMLeKMLEXhUavOhFmZslSRaineMegA_msDYF2ixqW0Y9NfCBpa2XaYQy2Dw0ImKzT2wjBditixhfi9KL-y5hb0KRO-gVn8nHQ3PCKntLHhO6QBcRH1Ium3b3vcvrkHnkVHRjk8fpHrosOSjWQs-9P8ykAbam6vvAZQatie3X2H1Rq2zNq6vz1TDbJ5_1lISuw6i5_U_U5Mg1VM71yPCFGna0iwiJvFEkWbRXyACQfMiAwAA\/cl-en\/h-7ecd5179a5939bb935e8be67a95bc9d0\/fh-48f8c473ef437e2ba93612771787bfcb","https:\/\/static.zmtcdn.com\/genjs\/v3\/t-806dc66bd78720487cd9e084aa72baeb\/l-H4sIAAAAAAAAA42OQQ7CMAwEP0Qi2sdwjYJxFYNTF9sRgtc3ESCu3Ga1q9FCEcM1Xu8N9RkrdbTDO4VGYYrTMc4BmrnUb82YF0YfaJgVyqCtiMuJ8IE6osypIG-o9hNGAxVmKNn66CNbsvmlu8eq1bMk1wy3xGRu__QvWmlc2QGDbWQbyQAAAA\/cl-en\/h-7ecd5179a5939bb935e8be67a95bc9d0\/fh-48f8c473ef437e2ba93612771787bfcb",2];
+                zomato._loadedScripts = 0;
+                zomato._totalScripts = jscripts[jscripts.length - 1];
+                loadRest();
+                window.onloadScripts = window.onloadScripts || [];
+                require(jscripts);
+                require(window.onloadScripts);
+            });
+                        require(['adWordRemarketing'],function(){
+                /* <![CDATA[ */
+                var google_conversion_id = 955006599;
+                var google_custom_params = window.google_tag_params;
+                var google_remarketing_only = true;
+                window.google_trackConversion({
+                    google_conversion_id: google_conversion_id,
+                    google_custom_params: google_custom_params,
+                    google_remarketing_only: google_remarketing_only
+                });
+                /* ]]> */
+            });
+                        
+            var requireArray = ['react','reactDom','jquery'];
+            
+            require(requireArray, function(React,ReactDOM,$){
+                window.React = React;
+                window.ReactDOM = ReactDOM;
+                var reactScripts = ["https:\/\/static.zmtcdn.com\/genjs\/v3\/t-b22c9bd277bd0d7e3e6ea5f8484159b3\/l-H4sIAAAAAAAAAytOTSxKzojPzCtJLSouySzJTMzRyyoGAOvLseoWAAAA\/cl-en\/h-7ecd5179a5939bb935e8be67a95bc9d0\/fh-48f8c473ef437e2ba93612771787bfcb",1];
+                require(reactScripts);
+            });
+            
+        });
+    }
+
+    var zomato = zomato || {};
+    if (window.addEventListener) {
+        window.addEventListener("load", loadjQuery, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onload", loadjQuery);
+    } else {
+        window.onload = loadjQuery;
+    }
+
+</script>
+
+<script>
+        var tdata = tdata || {};
+        tdata['fbtrack'] = '8af43a1dab08f4f1a7f16b490f207500';
+        tdata['city_id'] = '11339';
+    </script>    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"700b8cfba9","applicationID":"147205669,176570164,157544959","transactionName":"blFbNhZQWkVWUxVaXFcbehcXRVtbGEMEUkFaXBcSDEE=","queueTime":0,"applicationTime":447,"atts":"QhZMQF5KSRoVUUMJSERJ","errorBeacon":"bam.nr-data.net","agent":""}</script><script type="text/javascript" >var _cf = _cf || []; _cf.push(['_setFsp', true]); _cf.push(['_setBm', true]); _cf.push(['_setAu', '/resources/65d3ae43f8222521d7a84d092e0ebf']);</script><script type="text/javascript"  src="/resources/65d3ae43f8222521d7a84d092e0ebf"></script></body>
+</html>
+

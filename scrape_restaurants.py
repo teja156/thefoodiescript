@@ -23,6 +23,7 @@ proxies = {"http" : "127.0.0.1:8080","https" : "127.0.0.1:8080"}
 
 
 def get_cookies_zomato(cfile):
+    global all_cookies
     f = open(cfile,"r")
     cookies = f.read()
     f.close()
@@ -30,15 +31,14 @@ def get_cookies_zomato(cfile):
 
     #get name and value of cookie
     for i in range(0,len(cookies)):
-        name = cookies[i]['name'].encode("utf-8")
-        value = cookies[i]['value'].encode("utf-8")
+        name = cookies[i]['name']
+        value = cookies[i]['value']
         all_cookies[name] = value
-    
-	#print(all_cookies)
-
+        
 
 def connect_zomato(city):
     global subzone_url
+    global all_cookies
 
     r = requests.get(zomato_url+"/%s/order"%city,headers=headers,cookies=all_cookies)
     print(r.status_code)
@@ -182,21 +182,6 @@ def go_scraping(city,cfile,cats):
     sorted_zomato = sorted(zomato,key = lambda i: i['res_score'],reverse=True)
 
 
-    '''
-
-    k=1
-    for i in sorted_zomato:
-        print("Res id - %s\nName - %s\nOffer - %s\nRating - %f\nScore - %f\nCategory - %s"%(i['res_id'],i['res_name'],i['res_offer'],i['res_rating'],i['res_score'],i['res_category']))
-        print("\n\n")
-        k=k+1
-
-        if(k==10):
-            break
-
-        
-    print("Total Active restaurants - %d"%len(sorted_zomato))
-
-    '''
 
     return sorted_zomato
 
